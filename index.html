@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slope Calculator</title>
+    <link rel = "stylesheet" href = "style.css">
+</head>
+<body>
+<div class = "container">
+    <div class = "center">
+    <div class = "content">
+        <h3>Slope of a line</h3>
+        <div class = "row">
+            <div>
+            <label for = "x1" style = "font-weight: bold">X1</label>
+            <input type = "text" id = "x1" name = "x1" style = "width: 100px">
+            </div>
+
+            <div>
+            <label for = "y1" style = "font-weight: bold">Y1</label>
+            <input type = "text" id = "y1" name = "y1" style = "width: 100px">
+            </div>
+
+            <div>
+            <label for = "x2" style = "font-weight: bold">X2</label>
+            <input type = "text" id = "x2" name = "x2" style = "width: 100px">
+            </div>
+
+            <div>
+            <label for = "y2" style = "font-weight: bold">Y2</label>
+            <input type = "text" id = "y2" name = "y2" style = "width: 100px">
+            </div>
+        </div>
+
+            <button id = "calc">Calculate</button>
+            <button id = "clear">Clear</button>
+            <p></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    const x1 = document.getElementById("x1");
+    const y1 = document.getElementById("y1");
+    const x2 = document.getElementById("x2");
+    const y2 = document.getElementById("y2");
+
+    function subPoints(num1, num2, num3, num4){
+        let rise = y2 - y1;
+        let run = x2 - x1;
+
+
+    }
+</script>
+</body>
+</html>
