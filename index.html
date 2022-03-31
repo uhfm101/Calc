@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <title>Slope Calculator</title>
     <link rel = "stylesheet" href = "style.css">
+    <style>
+        .hidden{
+            display: none;
+        }
+    </style>
 </head>
 <body>
 <div class = "container">
@@ -44,13 +49,52 @@
     const y1 = document.getElementById("y1");
     const x2 = document.getElementById("x2");
     const y2 = document.getElementById("y2");
+    const ans = document.querySelector("p");
+    const calculateButton = document.getElementById("calc");
+    const clearButton = document.getElementById("clear");
 
     function subPoints(num1, num2, num3, num4){
-        let rise = y2 - y1;
-        let run = x2 - x1;
+        let rise = num4 - num2;
+        let run = num3 - num1;
 
-
+        if (rise && run){
+            return true;
+        }
+        return false;
     }
+
+    calculateButton.addEventListener("click", function(e){
+        let a = +x1.value;
+        let b = +y1.value;
+        let c = +x2.value;
+        let d = +y2.value;
+
+        if ( !vNum(a) || !vNum(b)|| !vNum(c) || !vNum(d)) {
+            ans.textContent = "Invalid Inputs"
+            return;
+        }
+
+        let rise = subPoints.rise
+        let run = subPoints.run
+            ans.textContent = `The slope of the line is ${rise} / ${run}`
+            return;
+        
+    })
+
+    function vNum(num){
+        if (isNaN(num)){
+            return false;
+        }
+        return true;
+    }
+
+    clearButton.addEventListener("click", function(e){
+        x1.value = "";
+        y1.value = "";
+        x2.value = "";
+        y2.value = "";
+        ans.classList.remove = ("hidden")
+    })
 </script>
 </body>
 </html>
