@@ -53,32 +53,31 @@
     const calculateButton = document.getElementById("calc");
     const clearButton = document.getElementById("clear");
 
-    function subPoints(num1, num2, num3, num4){
-        let rise = num4 - num2;
-        let run = num3 - num1;
-
-        if (rise && run){
-            return true;
-        }
-        return false;
-    }
+     // function subPoints(num1, num2, num3, num4){
+     //     let rise = num4 - num2;
+     //     let run = num3 - num1;
+     //
+     //     if (rise && run){
+     //         return true;
+     //     }
+     //     return false;
+     // }
 
     calculateButton.addEventListener("click", function(e){
-        let a = +x1.value;
-        let b = +y1.value;
-        let c = +x2.value;
-        let d = +y2.value;
+        let rise = +x2.value - +x1.value;
+        let run = +y2.value - +y1.value;
 
-        if ( !vNum(a) || !vNum(b)|| !vNum(c) || !vNum(d)) {
+        if ( !vNum(rise) || !vNum(run) ){
+
             ans.textContent = "Invalid Inputs"
             return;
         }
 
-        let rise = subPoints.rise
-        let run = subPoints.run
-            ans.textContent = `The slope of the line is ${rise} / ${run}`
-            return;
-        
+        function subPoints(){
+            ans.textContent  = `The slope of the line is ${rise}/${run}`
+        }
+        subPoints()
+
     })
 
     function vNum(num){
@@ -93,6 +92,7 @@
         y1.value = "";
         x2.value = "";
         y2.value = "";
+        ans.textContent = "";
         ans.classList.remove = ("hidden")
     })
 </script>
